@@ -1,0 +1,9 @@
+{:paths ["src"]
+ :deps {org.clojure/clojure {:mvn/version "1.11.4"}
+        io.github.cognitect-labs/test-runner
+        ;; PR with abstracted TestRunner
+        {:git/sha "4f870483fa1c69b442384fb5a0e6c6b502f8c264"}
+        io.github.noahtheduke/lazytest {:mvn/version "1.5.0"}}
+ :aliases
+ {:test
+  {:extra-paths ["test"]}}}
