@@ -38,7 +38,7 @@
   p/TestRunner
   (enable-filtering! [_ options nses]
     (p/enable-filtering! one options nses)
-    (p/enable-filtering! one options nses))
+    (p/enable-filtering! two options nses))
   (contains-tests? [_ options ns]
     ;; should never be called directly but this is a reasonable implementation:
     (or (p/contains-tests? one options ns)
@@ -50,8 +50,8 @@
      (p/run-tests one options nses)
      (p/run-tests two options nses)))
   (disable-filtering! [_ options nses]
-    (p/disable-filtering! one options nses)
-    (p/disable-filtering! two options nses)))
+    (p/disable-filtering! two options nses)
+    (p/disable-filtering! one options nses)))
 
 (defn create-lazytest+-runner []
   (->TwoTestRunners (create-lazytest-runner) (runner/create-clojure-test-runner)))
